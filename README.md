@@ -1,6 +1,6 @@
 # FreqPose: Frequency-Guided Enhancement for Deployment-Ready Low-Light Human Pose Estimation
 
-This repository contains the FreqPose codebase built on top of [OpenMMLab MMPose](https://github.com/open-mmlab/mmpose). It includes the Frequency-Guided Enhancement (FGE) module, ExLPose training and evaluation configs, detector-assisted evaluation scripts, visualization tools, and ablation components used for low-light human pose estimation experiments.
+This repository contains the FreqPose codebase built on top of [OpenMMLab MMPose](https://github.com/open-mmlab/mmpose). It includes the Frequency-Guided Enhancement (FGE) module, ExLPose training and evaluation configs, detector-assisted evaluation scripts, and ablation components used for low-light human pose estimation experiments.
 
 ## Scope
 
@@ -10,7 +10,6 @@ This project supports:
 - ExLPose mixed low-light + well-lit training
 - GT-box evaluation on ExLPose and ExLPose-OCN
 - detector-box evaluation with YOLO-generated person boxes
-- FGE visualizations and qualitative inspection
 - ablations for GLIC, LRBD, DCC, and combined variants
 
 ## Base Repository
@@ -151,15 +150,9 @@ Generate detector-box JSON files:
 python scripts/gen_yolo_bbox_json.py
 ```
 
-## Visualization
+## TensorBoard
 
-GT-box pose visualization:
-
-```bash
-bash scripts/vis_exlpose_fge_gt_multi.sh checkpoints/hrnet_fge_best.pth LL-A 10
-```
-
-TensorBoard:
+Launch TensorBoard for training logs:
 
 ```bash
 bash scripts/tb_fge.sh
@@ -190,7 +183,6 @@ Scripts:
 - `scripts/eval_exlpose_fge_splits.sh`
 - `scripts/eval_exlpose_fge_all.sh`
 - `scripts/eval_exlpose_fge_all_detector.sh`
-- `scripts/vis_exlpose_fge_gt_multi.py`
 
 ## Notes
 

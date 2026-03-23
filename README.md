@@ -39,7 +39,7 @@ Place it inside the MMPose repo at:
 data/ExLPose/
 ```
 
-Expected layout:
+Expected dataset layout:
 
 ```text
 data/ExLPose/
@@ -55,6 +55,37 @@ data/ExLPose/
 │   └── ExLPose-OC_test_RICOH3.json
 └── ...
 ```
+
+Expected working layout after setup:
+
+```text
+mmpose/
+├── FreqPose/
+│   ├── README.md
+│   ├── environment.yml
+│   ├── configs/
+│   ├── mmpose/
+│   └── scripts/
+├── checkpoints/
+│   ├── hrnet_fge_best.pth
+│   ├── res50_fge_best.pth
+│   └── yolo_exlpose_best.pt
+├── data/
+│   ├── ExLPose/
+│   │   ├── Annotations/
+│   │   └── ...
+│   └── ExLPoseDetector/
+├── tools/
+├── work_dirs/
+└── ...
+```
+
+Notes:
+
+- `checkpoints/` stores released pose checkpoints and the trained detector weights.
+- `data/ExLPose/` stores the downloaded ExLPose dataset.
+- `data/ExLPoseDetector/` is created by the detector preparation script.
+- `work_dirs/` is created automatically by MMPose and YOLO training runs.
 
 Set:
 

@@ -41,9 +41,11 @@ pip install -v -e .
 
 ## Dataset Setup
 
-Download ExLPose from:
+Download ExLPose from the official project page:
 
-- <https://drive.google.com/drive/folders/1E0Is4_cShxvsbJlep_aNEYLJpmHzq9FL>
+- <https://cg.postech.ac.kr/research/ExLPose/>
+
+If needed, you may also keep a mirrored backup source for internal use, but the public instructions should follow the official ExLPose release page first.
 
 Place it inside the MMPose repo at:
 
@@ -195,3 +197,8 @@ Scripts:
 - This repository is a project overlay on top of MMPose, not a replacement for the full upstream framework history.
 - `EXLPOSE_DATA_ROOT` is the primary dataset path hook used by the ExLPose configs and scripts.
 - `work_dirs/`, `runs/`, local thesis assets, and generated outputs should not be committed to the clean public release.
+
+## Acknowledgements
+
+- [MMPose](https://github.com/open-mmlab/mmpose) for the upstream pose estimation framework this project builds on.
+- [ExLPose](https://cg.postech.ac.kr/research/ExLPose/) for the dataset and the low-light pose estimation benchmark that this repository uses for training and evaluation.

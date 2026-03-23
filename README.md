@@ -12,7 +12,7 @@ This project supports:
 - detector-box evaluation with YOLO-generated person boxes
 - ablations for GLIC, LRBD, DCC, and combined variants
 
-## Base Repository
+## Setup
 
 Start from upstream MMPose:
 
@@ -21,14 +21,20 @@ git clone https://github.com/open-mmlab/mmpose.git
 cd mmpose
 ```
 
-Then apply or copy the FreqPose files from this repository on top of that MMPose checkout.
+Clone this FreqPose repository inside the MMPose directory:
+
+```bash
+git clone https://github.com/Shantu2024/FreqPose-Frequency-Guided-Enhancement-for-Deployment-Ready-Low-Light-Human-Pose-Estimation.git FreqPose
+```
+
+Then copy the FreqPose files into the MMPose checkout so the project-specific configs, scripts, and model files are available to the upstream framework.
 
 ## Environment Setup
 
-Create the public conda environment:
+Inside the MMPose root, create the public conda environment:
 
 ```bash
-conda env create -f environment.yml
+conda env create -f FreqPose/environment.yml
 conda activate freqpose
 ```
 
@@ -78,7 +84,7 @@ export EXLPOSE_DATA_ROOT=$PWD/data/ExLPose
 Create the mixed training annotation:
 
 ```bash
-python scripts/prepare_exlpose_train_mixed.py
+python FreqPose/scripts/prepare_exlpose_train_mixed.py
 ```
 
 ## Checkpoints
@@ -102,18 +108,26 @@ You may either:
 - download released best checkpoints into `checkpoints/`
 - or train new checkpoints and use the outputs from `work_dirs/`
 
+Recommended files:
+
+```text
+checkpoints/hrnet_fge_best.pth
+checkpoints/res50_fge_best.pth
+checkpoints/yolo_exlpose_best.pt
+```
+
 ## Training
 
 HRNet-W32 + full FGE:
 
 ```bash
-bash scripts/train_exlpose_fge_hrnet.sh
+bash FreqPose/scripts/train_exlpose_fge_hrnet.sh
 ```
 
 ResNet-50 + full FGE:
 
 ```bash
-bash scripts/train_exlpose_fge_res50.sh
+bash FreqPose/scripts/train_exlpose_fge_res50.sh
 ```
 
 ## Evaluation
@@ -121,19 +135,19 @@ bash scripts/train_exlpose_fge_res50.sh
 GT-box ExLPose split evaluation:
 
 ```bash
-bash scripts/eval_exlpose_fge_splits.sh checkpoints/hrnet_fge_best.pth hrnet
+bash FreqPose/scripts/eval_exlpose_fge_splits.sh checkpoints/hrnet_fge_best.pth hrnet
 ```
 
 GT-box ExLPose + OCN evaluation:
 
 ```bash
-bash scripts/eval_exlpose_fge_all.sh checkpoints/hrnet_fge_best.pth hrnet
+bash FreqPose/scripts/eval_exlpose_fge_all.sh checkpoints/hrnet_fge_best.pth hrnet
 ```
 
 Detector-box evaluation:
 
 ```bash
-bash scripts/eval_exlpose_fge_all_detector.sh checkpoints/hrnet_fge_best.pth hrnet
+bash FreqPose/scripts/eval_exlpose_fge_all_detector.sh checkpoints/hrnet_fge_best.pth hrnet
 ```
 
 ## Detector Pipeline
@@ -141,13 +155,13 @@ bash scripts/eval_exlpose_fge_all_detector.sh checkpoints/hrnet_fge_best.pth hrn
 Prepare and train the YOLO detector:
 
 ```bash
-bash scripts/train_yolo_exlpose_det.sh
+bash FreqPose/scripts/train_yolo_exlpose_det.sh
 ```
 
 Generate detector-box JSON files:
 
 ```bash
-python scripts/gen_yolo_bbox_json.py
+python FreqPose/scripts/gen_yolo_bbox_json.py
 ```
 
 ## TensorBoard
@@ -155,7 +169,7 @@ python scripts/gen_yolo_bbox_json.py
 Launch TensorBoard for training logs:
 
 ```bash
-bash scripts/tb_fge.sh
+bash FreqPose/scripts/tb_fge.sh
 ```
 
 ## Core FreqPose Files

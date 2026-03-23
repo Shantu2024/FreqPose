@@ -14,35 +14,16 @@ This project supports:
 
 ## Setup
 
-Start from upstream MMPose:
-
 ```bash
 git clone https://github.com/open-mmlab/mmpose.git
 cd mmpose
-```
-
-Clone this FreqPose repository inside the MMPose directory:
-
-```bash
 git clone https://github.com/Shantu2024/FreqPose-Frequency-Guided-Enhancement-for-Deployment-Ready-Low-Light-Human-Pose-Estimation.git FreqPose
-```
-
-Then copy the FreqPose files into the MMPose checkout so the project-specific configs, scripts, and model files are available to the upstream framework.
-
-## Environment Setup
-
-Inside the MMPose root, create the public conda environment:
-
-```bash
 conda env create -f FreqPose/environment.yml
 conda activate freqpose
-```
-
-Install the repo in editable mode:
-
-```bash
 pip install -v -e .
 ```
+
+Run the remaining FreqPose scripts from the MMPose root after this setup.
 
 ## Dataset Setup
 

@@ -120,14 +120,6 @@ You may either:
 - download released best checkpoints into `checkpoints/`
 - or train new checkpoints and use the outputs from `work_dirs/`
 
-Recommended files:
-
-```text
-checkpoints/hrnet_fge_best.pth
-checkpoints/res50_fge_best.pth
-checkpoints/yolo_exlpose_best.pt
-```
-
 ## Training
 
 HRNet-W32 + full FGE:
@@ -217,6 +209,9 @@ Scripts:
 - `work_dirs/`, `runs/`, local thesis assets, and generated outputs should not be committed to the clean public release.
 
 ## Acknowledgements
+
+- [MMPose](https://github.com/open-mmlab/mmpose) for the upstream pose estimation framework this project builds on.
+- [ExLPose](https://cg.postech.ac.kr/research/ExLPose/) for the dataset and the benchmark used by this project.
 
 - [MMPose](https://github.com/open-mmlab/mmpose) for the upstream pose estimation framework this project builds on.
 - [ExLPose](https://cg.postech.ac.kr/research/ExLPose/) for the dataset and the low-light pose estimation benchmark that this repository uses for training and evaluation.

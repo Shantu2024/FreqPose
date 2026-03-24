@@ -2,6 +2,8 @@
 
 This repository contains the FreqPose codebase built on top of [OpenMMLab MMPose](https://github.com/open-mmlab/mmpose). It includes the Frequency-Guided Enhancement (FGE) module, ExLPose training and evaluation configs, detector-assisted evaluation scripts, and ablation components used for low-light human pose estimation experiments.
 
+Released checkpoints: [Google Drive download](https://drive.google.com/file/d/180nyWHlX3snr18YKf71ycfk9-hYzqFQm/view?usp=drive_link)
+
 ## Scope
 
 This project supports:
@@ -117,7 +119,7 @@ checkpoints/yolo_exlpose_best.pt
 
 You may either:
 
-- download released best checkpoints into `checkpoints/`
+- download the released best checkpoints from [Google Drive](https://drive.google.com/file/d/180nyWHlX3snr18YKf71ycfk9-hYzqFQm/view?usp=drive_link) into `checkpoints/`
 - or train new checkpoints and use the outputs from `work_dirs/`
 
 ## Training

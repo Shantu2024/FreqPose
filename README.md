@@ -214,6 +214,3 @@ Scripts:
 
 - [MMPose](https://github.com/open-mmlab/mmpose) for the upstream pose estimation framework this project builds on.
 - [ExLPose](https://cg.postech.ac.kr/research/ExLPose/) for the dataset and the benchmark used by this project.
-
-- [MMPose](https://github.com/open-mmlab/mmpose) for the upstream pose estimation framework this project builds on.
-- [ExLPose](https://cg.postech.ac.kr/research/ExLPose/) for the dataset and the low-light pose estimation benchmark that this repository uses for training and evaluation.

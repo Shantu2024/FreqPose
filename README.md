@@ -17,7 +17,7 @@ This project supports:
 ```bash
 git clone https://github.com/open-mmlab/mmpose.git
 cd mmpose
-git clone https://github.com/Shantu2024/FreqPose-Frequency-Guided-Enhancement-for-Deployment-Ready-Low-Light-Human-Pose-Estimation.git FreqPose
+git clone https://github.com/Shantu2024/FreqPose.git FreqPose
 conda env create -f FreqPose/environment.yml
 conda activate freqpose
 pip install -v -e .
